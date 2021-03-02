@@ -7,6 +7,8 @@ par(mfrow = c(2,1))
 time = TrafficData[,1]
 sens1 = TrafficData[,2]
 tsplot(time,sens1)
+average = mean(TrafficData[["S313368"]], na.rm = T)
+abline(h = average, col = "red")
 
 ##work with time vs. sensor 2
 time = TrafficData[,1]
