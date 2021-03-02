@@ -1,3 +1,5 @@
+library(astsa)
+
 variable.names(TrafficData)
 TrafficData[,1]
 par(mfrow = c(2,1))
