@@ -18,7 +18,7 @@ average2
 abline(h = average2, col = "red")
 
 ##work with time vs. sensor 3
-sens2 = TrafficData[,5]
+sens3 = TrafficData[,5]
 tsplot(time,sens3)
 average3 = mean(TrafficData[["S313487"]], na.rm = T)
 average3
