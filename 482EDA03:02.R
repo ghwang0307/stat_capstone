@@ -73,3 +73,16 @@ average10 = mean(TrafficData[["S318593"]], na.rm = T)
 average10
 abline(h = average10, col = "red")
 
+##barplot
+
+H <- c(average1,average2,average3,average4,average5,average6,average7,average8,average9,average10)
+M <- c(1,2,3,4,5,6,7,8,9,10)
+png(file = "eda_avgs.png")
+
+# Plot the bar chart 
+barplot(H,names.arg=M,xlab="Sensor",ylab="Yearly Average")
+
+# Save the file
+dev.off()
+
+
