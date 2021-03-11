@@ -1,5 +1,5 @@
 library(astsa)
-
+# package
 variable.names(TrafficData)
 TrafficData <- data.frame(TrafficData)
 TrafficData[,1]
