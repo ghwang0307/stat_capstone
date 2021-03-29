@@ -87,4 +87,8 @@ ggplot() + geom_line(aes(x=date[S5A1_1weekAfter[tenMinIndex]],y=sens5[S5A1_1week
 ggplot() + geom_line(aes(x=date[S5A1_2weekAfter[tenMinIndex]],y=sens5[S5A1_2weekAfter[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 2 weeks after")
 ggplot() + geom_line(aes(x=date[S5A1_3weekAfter[tenMinIndex]],y=sens5[S5A1_3weekAfter[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 3 weeks after")
 
+#average of season and plot
+season = list(sens10[S5A1_3weekAfter[tenMinIndex]], sens10[S5A1_2weekAfter[tenMinIndex]], sens10[S5A1_1weekAfter[tenMinIndex]], sens10[S5A1_1weekBefore[tenMinIndex]], sens10[S5A1_2weekBefore[tenMinIndex]], sens10[S5A1_3weekBefore[tenMinIndex]])
+season_avg = rowMeans(simplify2array(season))
 
+ggplot() + geom_line(aes(x=date[S5A1[tenMinIndex]],y=season_avg)) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 Season")
