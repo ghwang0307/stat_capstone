@@ -58,15 +58,33 @@ S10A3 = which(substr(date,1,10)=="2017-04-06")
 S10A4 = which(substr(date,1,10)=="2017-06-16")
 S10A5 = which(substr(date,1,10)=="2017-11-15")
 
+
+
 #plotting days of the accidents at their corresponding sensors
-ggplot() + geom_line(aes(x=date[S5A1[tenMinIndex]],y=sens10[S5A1[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1") + geom_vline(xintercept = ymd_hm("2017-02-06 08:10"),colour="red")
-ggplot() + geom_line(aes(x=date[S5A2[tenMinIndex]],y=sens10[S5A2[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 2") + geom_vline(xintercept = ymd_hm("2017-10-07 17:47"),colour="red")
-ggplot() + geom_line(aes(x=date[S5A3[tenMinIndex]],y=sens10[S5A3[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 3") + geom_vline(xintercept = ymd_hm("2017-07-24 12:12"),colour="red")
-ggplot() + geom_line(aes(x=date[S5A4[tenMinIndex]],y=sens10[S5A4[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 4") + geom_vline(xintercept = ymd_hm("2017-03-29 08:25"),colour="red")
+ggplot() + geom_line(aes(x=date[S5A1[tenMinIndex]],y=sens5[S5A1[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1") + geom_vline(xintercept = ymd_hm("2017-02-06 08:10"),colour="red")
+ggplot() + geom_line(aes(x=date[S5A2[tenMinIndex]],y=sens5[S5A2[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 2") + geom_vline(xintercept = ymd_hm("2017-10-07 17:47"),colour="red")
+ggplot() + geom_line(aes(x=date[S5A3[tenMinIndex]],y=sens5[S5A3[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 3") + geom_vline(xintercept = ymd_hm("2017-07-24 12:12"),colour="red")
+ggplot() + geom_line(aes(x=date[S5A4[tenMinIndex]],y=sens5[S5A4[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 4") + geom_vline(xintercept = ymd_hm("2017-03-29 08:25"),colour="red")
 ggplot() + geom_line(aes(x=date[S10A1[tenMinIndex]],y=sens10[S10A1[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 10 Accident 1") + geom_vline(xintercept = ymd_hm("2017-01-27 20:34"),colour="red")
 ggplot() + geom_line(aes(x=date[S10A2[tenMinIndex]],y=sens10[S10A2[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 10 Accident 2") + geom_vline(xintercept = ymd_hm("2017-01-18 14:23"),colour="red")
 ggplot() + geom_line(aes(x=date[S10A3[tenMinIndex]],y=sens10[S10A3[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 10 Accident 3") + geom_vline(xintercept = ymd_hm("2017-04-06 16:33"),colour="red")
 ggplot() + geom_line(aes(x=date[S10A4[tenMinIndex]],y=sens10[S10A4[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 10 Accident 4") + geom_vline(xintercept = ymd_hm("2017-06-16 06:34"),colour="red")
 ggplot() + geom_line(aes(x=date[S10A5[tenMinIndex]],y=sens10[S10A5[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 10 Accident 5") + geom_vline(xintercept = ymd_hm("2017-11-15 17:15"),colour="red")
+
+#getting the weeks before and after for sensor 5 accident 1
+S5A1_3weekBefore = which(substr(date,1,10)=="2017-01-16")
+S5A1_2weekBefore = which(substr(date,1,10)=="2017-01-23")
+S5A1_1weekBefore = which(substr(date,1,10)=="2017-01-30")
+S5A1_1weekAfter = which(substr(date,1,10)=="2017-02-13")
+S5A1_2weekAfter = which(substr(date,1,10)=="2017-02-20")
+S5A1_3weekAfter = which(substr(date,1,10)=="2017-02-27")
+
+ggplot() + geom_line(aes(x=date[S5A1_3weekBefore[tenMinIndex]],y=sens5[S5A1_3weekBefore[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 3 weeks before")
+ggplot() + geom_line(aes(x=date[S5A1_2weekBefore[tenMinIndex]],y=sens5[S5A1_2weekBefore[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 2 weeks before")
+ggplot() + geom_line(aes(x=date[S5A1_1weekBefore[tenMinIndex]],y=sens5[S5A1_1weekBefore[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 1 week before")
+ggplot() + geom_line(aes(x=date[S5A1[tenMinIndex]],y=sens5[S5A1[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1") + geom_vline(xintercept = ymd_hm("2017-02-06 08:10"),colour="red")
+ggplot() + geom_line(aes(x=date[S5A1_1weekAfter[tenMinIndex]],y=sens5[S5A1_1weekAfter[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 1 week after")
+ggplot() + geom_line(aes(x=date[S5A1_2weekAfter[tenMinIndex]],y=sens5[S5A1_2weekAfter[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 2 weeks after")
+ggplot() + geom_line(aes(x=date[S5A1_3weekAfter[tenMinIndex]],y=sens5[S5A1_3weekAfter[tenMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 1 3 weeks after")
 
 
