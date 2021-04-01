@@ -70,7 +70,7 @@ s5a2b2 <- ggplot() + geom_line(aes(x=date[S5A2_2weekBefore[twentyMinIndex]],y=se
 s5a2b1 <- ggplot() + geom_line(aes(x=date[S5A2_1weekBefore[twentyMinIndex]],y=sens5[S5A2_1weekBefore[twentyMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 2 1 week before")
 s5a2a1 <- ggplot() + geom_line(aes(x=date[S5A2_1weekAfter[twentyMinIndex]],y=sens5[S5A2_1weekAfter[twentyMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 2 1 week after")
 s5a2a2 <- ggplot() + geom_line(aes(x=date[S5A2_2weekAfter[twentyMinIndex]],y=sens5[S5A2_2weekAfter[twentyMinIndex]])) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Sensor 5 Accident 2 2 weeks after")
-s5a2Figure <- ggarrange(s5a2b2,s5a2b1,s5a2,s5a2a1,s5a2b2)
+s5a2Figure <- ggarrange(s5a2b2,s5a2b1,s5a2,s5a2a1,s5a2a2)
 
 #weeks before and after for sensor 5 accident 3
 S5A3_2weekBefore = which(substr(date,1,10)=="2017-07-10")
