@@ -217,6 +217,28 @@ s10a4_vs_avg
 s10a5Figure
 s10a5_vs_avg
 
+#plotting before, after, and day of on top of each other
+s5a1season <- s5a1 + geom_line(aes(x=date[S5A1[twentyMinIndex]],y=sens5[S5A1_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A1[twentyMinIndex]],y=sens5[S5A1_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A1[twentyMinIndex]],y=sens5[S5A1_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S5A1[twentyMinIndex]],y=sens5[S5A1_2weekAfter[twentyMinIndex]]))
+s5a2season <- s5a2 + geom_line(aes(x=date[S5A2[twentyMinIndex]],y=sens5[S5A2_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A2[twentyMinIndex]],y=sens5[S5A2_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A2[twentyMinIndex]],y=sens5[S5A2_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S5A2[twentyMinIndex]],y=sens5[S5A2_2weekAfter[twentyMinIndex]]))
+s5a3season <- s5a3 + geom_line(aes(x=date[S5A3[twentyMinIndex]],y=sens5[S5A3_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A3[twentyMinIndex]],y=sens5[S5A3_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A3[twentyMinIndex]],y=sens5[S5A3_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S5A3[twentyMinIndex]],y=sens5[S5A3_2weekAfter[twentyMinIndex]]))
+s5a4season <- s5a4 + geom_line(aes(x=date[S5A4[twentyMinIndex]],y=sens5[S5A4_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A4[twentyMinIndex]],y=sens5[S5A4_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S5A4[twentyMinIndex]],y=sens5[S5A4_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S5A4[twentyMinIndex]],y=sens5[S5A4_2weekAfter[twentyMinIndex]]))
+s10a1season <- s10a1 + geom_line(aes(x=date[S10A1[twentyMinIndex]],y=sens10[S10A1_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A1[twentyMinIndex]],y=sens10[S10A1_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A1[twentyMinIndex]],y=sens10[S10A1_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S10A1[twentyMinIndex]],y=sens10[S10A1_2weekAfter[twentyMinIndex]]))
+s10a2season <- s10a2 + geom_line(aes(x=date[S10A2[twentyMinIndex]],y=sens10[S10A2_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A2[twentyMinIndex]],y=sens10[S10A2_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A2[twentyMinIndex]],y=sens10[S10A2_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S10A2[twentyMinIndex]],y=sens10[S10A2_2weekAfter[twentyMinIndex]]))
+s10a3season <- s10a3 + geom_line(aes(x=date[S10A3[twentyMinIndex]],y=sens10[S10A3_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A3[twentyMinIndex]],y=sens10[S10A3_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A3[twentyMinIndex]],y=sens10[S10A3_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S10A3[twentyMinIndex]],y=sens10[S10A3_2weekAfter[twentyMinIndex]]))
+s10a4season <- s10a4 + geom_line(aes(x=date[S10A4[twentyMinIndex]],y=sens10[S10A4_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A4[twentyMinIndex]],y=sens10[S10A4_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A4[twentyMinIndex]],y=sens10[S10A4_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S10A4[twentyMinIndex]],y=sens10[S10A4_2weekAfter[twentyMinIndex]]))
+s10a5season <- s10a5 + geom_line(aes(x=date[S10A5[twentyMinIndex]],y=sens10[S10A5_2weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A5[twentyMinIndex]],y=sens10[S10A5_1weekBefore[twentyMinIndex]])) + geom_line(aes(x=date[S10A5[twentyMinIndex]],y=sens10[S10A5_1weekAfter[twentyMinIndex]])) + geom_line(aes(x=date[S10A5[twentyMinIndex]],y=sens10[S10A5_2weekAfter[twentyMinIndex]]))
+
+
+s5a1season
+s5a2season
+s5a3season
+s5a4season
+s10a1season
+s10a2season
+s10a3season
+s10a4season
+s10a5season
+
 #calculate standard deviation for season
 install.packages("matrixStats")
 library(matrixStats)
