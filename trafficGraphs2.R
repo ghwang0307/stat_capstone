@@ -216,3 +216,9 @@ s10a4Figure
 s10a4_vs_avg
 s10a5Figure
 s10a5_vs_avg
+
+#calculate standard deviation for season
+install.packages("matrixStats")
+library(matrixStats)
+season_sd = rowSds(simplify2array(season))
+print(season_sd)
