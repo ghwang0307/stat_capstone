@@ -1,0 +1,15 @@
+S1H1vsAvg <- ggplot() + geom_line(aes(x=date[H1],y=sens1[H1],col="Holiday")) + geom_line(aes(x=date[H1],y=S1MondayAvgs,col="Average Monday"))+ xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="New Year's Day vs Average Monday") 
+S1H2vsAvg <- ggplot() + geom_line(aes(x=date[H2],y=sens1[H2],col="Holiday")) + geom_line(aes(x=date[H2],y=S1MondayAvgs,col="Average Monday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="MLK Day vs Average Monday")
+S1H3vsAvg <- ggplot() + geom_line(aes(x=date[H3],y=sens1[H3],col="Holiday")) + geom_line(aes(x=date[H3],y=S1SundayAvgs,col="Average Sunday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Superbowl Sunday vs Average Sunday")
+S1H4vsAvg <- ggplot() + geom_line(aes(x=date[H4],y=sens1[H4],col="Holiday")) + geom_line(aes(x=date[H4],y=S1MondayAvgs,col="Average Monday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="President's Day vs Average Monday")
+S1H5vsAvg <- ggplot() + geom_line(aes(x=date[H5],y=sens1[H5],col="Holiday")) + geom_line(aes(x=date[H5],y=S1MondayAvgs,col="Average Monday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Memorial Day vs Average Monday")
+S1H6vsAvg <- ggplot() + geom_line(aes(x=date[H6],y=sens1[H6],col="Holiday")) + geom_line(aes(x=date[H6],y=S1TuesdayAvgs,col="Average Tuesday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Independence Day vs Average Tuesday")
+S1H7vsAvg <- ggplot() + geom_line(aes(x=date[H7],y=sens1[H7],col="Holiday")) + geom_line(aes(x=date[H7],y=S1MondayAvgs,col="Average Monday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Labor Day vs Average Monday")
+S1H8vsAvg <- ggplot() + geom_line(aes(x=date[H8],y=sens1[H8],col="Holiday")) + geom_line(aes(x=date[H8],y=S1ThursdayAvgs,col="Average Thursday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Thanksgiving Day vs Average Thursday")
+S1H9vsAvg <- ggplot() + geom_line(aes(x=date[H9],y=sens1[H9],col="Holiday")) + geom_line(aes(x=date[H9],y=S1FridayAvgs,col="Average Friday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Day After Thanksgiving vs Average Friday")
+S1H10vsAvg <- ggplot() + geom_line(aes(x=date[H10],y=sens1[H10],col="Holiday")) + geom_line(aes(x=date[H10],y=S1MondayAvgs,col="Average Monday")) + xlab(label="Time") + ylab(label="Traffic") + ggtitle(label="Christmas Day vs Average Monday")
+
+sensor1totalgraphs = ggarrange(S1H1vsAvg+ rremove("x.text"),S1H2vsAvg+ rremove("x.text"),S1H3vsAvg+ rremove("x.text"),S1H4vsAvg+ rremove("x.text"),S1H5vsAvg+ rremove("x.text"),
+          S1H6vsAvg+ rremove("x.text"),S1H7vsAvg+ rremove("x.text"),S1H8vsAvg+ rremove("x.text"),S1H9vsAvg+ rremove("x.text"),S1H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+          ncol = 5, nrow = 2)
+annotate_figure(sensor1totalgraphs, top = "Sensor 1 Holiday Graphs")
