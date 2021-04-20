@@ -2,6 +2,7 @@ load("~/R Code/TrafficChallenge2 .Rdata")
 library(lubridate)
 library(ggplot2)
 library(ggpubr)
+library(fda)
 
 timeStrings = substr(TrafficData[,1],1,16)
 
@@ -676,3 +677,17 @@ S10H7vsAvg
 S10H8vsAvg
 S10H9vsAvg
 S10H10vsAvg
+
+
+p = 288
+n = 52
+
+S10Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S10Mondays = rbind(S10Mondays,sens10[index])
+}
+S10Mondays = S10Mondays[2:289,]
+
+matplot(S10Mondays,type='l')
+fbplot(S10Mondays,method='MBD')
