@@ -8,6 +8,9 @@ timeStrings = substr(TrafficData[,1],1,16)
 
 date = ymd_hm(timeStrings)
 
+#dates not including day of daylight savings
+noSavingsDate = date[which(substr(date,1,10)!="2017-03-12")]
+
 #date of each sensor
 sens1 = TrafficData[,2]
 sens2 = TrafficData[,3]
@@ -41,6 +44,9 @@ Tuesdays = which(wday(date)==3)
 Thursdays = which(wday(date)==5)
 Fridays = which(wday(date)==6)
 Sundays = which(wday(date)==1)
+
+#removing day of daylight savings on march 12th so that all days have 288 time points
+SundaysNoSavings = which(wday(noSavingsDate)==1)
 
 #list of times
 times = hm(substr(date[H1],12,16))
@@ -678,10 +684,12 @@ S10H8vsAvg
 S10H9vsAvg
 S10H10vsAvg
 
+##For functional Data Analysis
 
 p = 288
 n = 52
 
+#For sensor 10
 S10Mondays = rep(NA,52)
 for(i in seq(288)) {
   index = Mondays[seq(i,length(Mondays),288)]
@@ -689,5 +697,57 @@ for(i in seq(288)) {
 }
 S10Mondays = S10Mondays[2:289,]
 
-matplot(S10Mondays,type='l')
-fbplot(S10Mondays,method='MBD')
+
+S10Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S10Tuesdays = rbind(S10Tuesdays,sens10[index])
+}
+S10Tuesdays = S10Tuesdays[2:289,]
+
+S10Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S10Thursdays = rbind(S10Thursdays,sens10[index])
+}
+S10Thursdays = S10Thursdays[2:289,]
+
+S10Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S10Fridays = rbind(S10Fridays,sens10[index])
+}
+S10Fridays = S10Fridays[2:289,]
+
+
+
+S10Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S10Sundays = rbind(S10Sundays,sens10[index])
+}
+S10Sundays = S10Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and match with fbplot
+matplot(S10Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 10 All Mondays")
+fbplot(S10Mondays,method='MBD',main="Sensor 10 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#27 is a holiday and matches with fbplot
+matplot(S10Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 10 All Tuesdays")
+fbplot(S10Tuesdays,method='MBD',main="Sensor 10 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#47 is a holiday and matches with fbplot
+matplot(S10Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 10 All Thursdays")
+fbplot(S10Thursdays,method='MBD',main="Sensor 10 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#47 is a holiday and matches with fbplot
+matplot(S10Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 10 All Fridays")
+fbplot(S10Fridays,method='MBD',main="Sensor 10 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#6 is a holiday and matches with fbplot
+matplot(S10Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 10 All Sundays")
+fbplot(S10Sundays,method='MBD',main="Sensor 10 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
