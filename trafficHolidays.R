@@ -689,6 +689,587 @@ S10H10vsAvg
 p = 288
 n = 52
 
+#################################################
+#For sensor 1
+S1Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S1Mondays = rbind(S1Mondays,sens1[index])
+}
+S1Mondays = S1Mondays[2:289,]
+
+
+S1Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S1Tuesdays = rbind(S1Tuesdays,sens1[index])
+}
+S1Tuesdays = S1Tuesdays[2:289,]
+
+S1Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S1Thursdays = rbind(S1Thursdays,sens1[index])
+}
+S1Thursdays = S1Thursdays[2:289,]
+
+S1Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S1Fridays = rbind(S1Fridays,sens1[index])
+}
+S1Fridays = S1Fridays[2:289,]
+
+
+
+S1Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S1Sundays = rbind(S1Sundays,sens1[index])
+}
+S1Sundays = S1Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 36 was correctly identified with this fbplot
+matplot(S1Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 1 All Mondays")
+fbplot(S1Mondays,method='MBD',main="Sensor 1 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#27 is a holiday and matches with fbplot
+matplot(S1Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 1 All Tuesdays")
+fbplot(S1Tuesdays,method='MBD',main="Sensor 1 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#47 is a holiday and was not identified
+matplot(S1Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 1 All Thursdays")
+fbplot(S1Thursdays,method='MBD',main="Sensor 1 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#47 is a holiday and was not identified
+matplot(S1Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 1 All Fridays")
+fbplot(S1Fridays,method='MBD',main="Sensor 1 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#6 is a holiday and was not identified
+matplot(S1Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 1 All Sundays")
+fbplot(S1Sundays,method='MBD',main="Sensor 1 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+
+#################################################
+#For sensor 2
+S2Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S2Mondays = rbind(S2Mondays,sens2[index])
+}
+S2Mondays = S2Mondays[2:289,]
+
+
+S2Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S2Tuesdays = rbind(S2Tuesdays,sens2[index])
+}
+S2Tuesdays = S2Tuesdays[2:289,]
+
+S2Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S2Thursdays = rbind(S2Thursdays,sens2[index])
+}
+S2Thursdays = S2Thursdays[2:289,]
+
+S2Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S2Fridays = rbind(S2Fridays,sens2[index])
+}
+S2Fridays = S2Fridays[2:289,]
+
+
+
+S2Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S2Sundays = rbind(S2Sundays,sens2[index])
+}
+S2Sundays = S2Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 1, 22, 36, and 52 were correclty identified
+matplot(S2Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 2 All Mondays")
+fbplot(S2Mondays,method='MBD',main="Sensor 2 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#27 is a holiday and matches with fbplot
+matplot(S2Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 2 All Tuesdays")
+fbplot(S2Tuesdays,method='MBD',main="Sensor 2 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#47 is a holiday and matches with fbplot
+matplot(S2Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 2 All Thursdays")
+fbplot(S2Thursdays,method='MBD',main="Sensor 2 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#47 is a holiday and matches with fbplot
+matplot(S2Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 2 All Fridays")
+fbplot(S2Fridays,method='MBD',main="Sensor 2 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+#6 is a holiday and matches with fbplot
+matplot(S2Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 2 All Sundays")
+fbplot(S2Sundays,method='MBD',main="Sensor 2 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,900))
+
+
+#################################################
+#For sensor 3
+S3Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S3Mondays = rbind(S3Mondays,sens3[index])
+}
+S3Mondays = S3Mondays[2:289,]
+
+
+S3Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S3Tuesdays = rbind(S3Tuesdays,sens3[index])
+}
+S3Tuesdays = S3Tuesdays[2:289,]
+
+S3Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S3Thursdays = rbind(S3Thursdays,sens3[index])
+}
+S3Thursdays = S3Thursdays[2:289,]
+
+S3Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S3Fridays = rbind(S3Fridays,sens3[index])
+}
+S3Fridays = S3Fridays[2:289,]
+
+
+
+S3Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S3Sundays = rbind(S3Sundays,sens3[index])
+}
+S3Sundays = S3Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 1, 36, and 52 were correctly identified
+matplot(S3Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 3 All Mondays")
+fbplot(S3Mondays,method='MBD',main="Sensor 3 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#27 is a holiday and matches with fbplot
+matplot(S3Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 3 All Tuesdays")
+fbplot(S3Tuesdays,method='MBD',main="Sensor 3 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#47 is a holiday and matches with fbplot
+matplot(S3Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 3 All Thursdays")
+fbplot(S3Thursdays,method='MBD',main="Sensor 3 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#47 is a holiday and was not identified
+matplot(S3Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 3 All Fridays")
+fbplot(S3Fridays,method='MBD',main="Sensor 3 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#6 is a holiday and was not identified
+matplot(S3Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 3 All Sundays")
+fbplot(S3Sundays,method='MBD',main="Sensor 3 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#################################################
+#For sensor 4
+S4Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S4Mondays = rbind(S4Mondays,sens4[index])
+}
+S4Mondays = S4Mondays[2:289,]
+
+
+S4Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S4Tuesdays = rbind(S4Tuesdays,sens4[index])
+}
+S4Tuesdays = S4Tuesdays[2:289,]
+
+S4Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S4Thursdays = rbind(S4Thursdays,sens4[index])
+}
+S4Thursdays = S4Thursdays[2:289,]
+
+S4Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S4Fridays = rbind(S4Fridays,sens4[index])
+}
+S4Fridays = S4Fridays[2:289,]
+
+
+
+S4Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S4Sundays = rbind(S4Sundays,sens4[index])
+}
+S4Sundays = S4Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 36 was correctly identified
+matplot(S4Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 4 All Mondays")
+fbplot(S4Mondays,method='MBD',main="Sensor 4 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#27 is a holiday and was not identified
+matplot(S4Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 4 All Tuesdays")
+fbplot(S4Tuesdays,method='MBD',main="Sensor 4 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#47 is a holiday and was not identified
+matplot(S4Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 4 All Thursdays")
+fbplot(S4Thursdays,method='MBD',main="Sensor 4 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#47 is a holiday and was not identified
+matplot(S4Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 4 All Fridays")
+fbplot(S4Fridays,method='MBD',main="Sensor 4 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#6 is a holiday and was not identified
+matplot(S4Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 4 All Sundays")
+fbplot(S4Sundays,method='MBD',main="Sensor 4 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#################################################
+#For sensor 5
+S5Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S5Mondays = rbind(S5Mondays,sens5[index])
+}
+S5Mondays = S5Mondays[2:289,]
+
+
+S5Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S5Tuesdays = rbind(S5Tuesdays,sens5[index])
+}
+S5Tuesdays = S5Tuesdays[2:289,]
+
+S5Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S5Thursdays = rbind(S5Thursdays,sens5[index])
+}
+S5Thursdays = S5Thursdays[2:289,]
+
+S5Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S5Fridays = rbind(S5Fridays,sens5[index])
+}
+S5Fridays = S5Fridays[2:289,]
+
+
+
+S5Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S5Sundays = rbind(S5Sundays,sens5[index])
+}
+S5Sundays = S5Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 1, 22, 36, 52 correctly identified
+matplot(S5Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 5 All Mondays")
+fbplot(S5Mondays,method='MBD',main="Sensor 5 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#27 is a holiday and matches with fbplot
+matplot(S5Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 5 All Tuesdays")
+fbplot(S5Tuesdays,method='MBD',main="Sensor 5 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#47 is a holiday and matches with fbplot
+matplot(S5Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 5 All Thursdays")
+fbplot(S5Thursdays,method='MBD',main="Sensor 5 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#47 is a holiday and was not identified
+matplot(S5Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 5 All Fridays")
+fbplot(S5Fridays,method='MBD',main="Sensor 5 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#6 is a holiday and was not identified
+matplot(S5Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 5 All Sundays")
+fbplot(S5Sundays,method='MBD',main="Sensor 5 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#################################################
+#For sensor 6
+S6Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S6Mondays = rbind(S6Mondays,sens6[index])
+}
+S6Mondays = S6Mondays[2:289,]
+
+
+S6Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S6Tuesdays = rbind(S6Tuesdays,sens6[index])
+}
+S6Tuesdays = S6Tuesdays[2:289,]
+
+S6Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S6Thursdays = rbind(S6Thursdays,sens6[index])
+}
+S6Thursdays = S6Thursdays[2:289,]
+
+S6Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S6Fridays = rbind(S6Fridays,sens6[index])
+}
+S6Fridays = S6Fridays[2:289,]
+
+
+
+S6Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S6Sundays = rbind(S6Sundays,sens6[index])
+}
+S6Sundays = S6Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 1 3 6 52 correctly identified
+matplot(S6Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 6 All Mondays")
+fbplot(S6Mondays,method='MBD',main="Sensor 6 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,500))
+
+#27 is a holiday and matches with fbplot
+matplot(S6Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 6 All Tuesdays")
+fbplot(S6Tuesdays,method='MBD',main="Sensor 6 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,500))
+
+#47 is a holiday and matches with fbplot
+matplot(S6Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 6 All Thursdays")
+fbplot(S6Thursdays,method='MBD',main="Sensor 6 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,500))
+
+#47 is a holiday and matches with fbplot
+matplot(S6Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 6 All Fridays")
+fbplot(S6Fridays,method='MBD',main="Sensor 6 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,500))
+
+#6 is a holiday and matches with fbplot
+matplot(S6Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 6 All Sundays")
+fbplot(S6Sundays,method='MBD',main="Sensor 6 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,500))
+
+#################################################
+#For sensor 7
+S7Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S7Mondays = rbind(S7Mondays,sens7[index])
+}
+S7Mondays = S7Mondays[2:289,]
+
+
+S7Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S7Tuesdays = rbind(S7Tuesdays,sens7[index])
+}
+S7Tuesdays = S7Tuesdays[2:289,]
+
+S7Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S7Thursdays = rbind(S7Thursdays,sens7[index])
+}
+S7Thursdays = S7Thursdays[2:289,]
+
+S7Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S7Fridays = rbind(S7Fridays,sens7[index])
+}
+S7Fridays = S7Fridays[2:289,]
+
+
+
+S7Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S7Sundays = rbind(S7Sundays,sens7[index])
+}
+S7Sundays = S7Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 3, 6, 22 were correctly identified
+matplot(S7Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 7 All Mondays")
+fbplot(S7Mondays,method='MBD',main="Sensor 7 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#27 is a holiday and matches with fbplot
+matplot(S7Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 7 All Tuesdays")
+fbplot(S7Tuesdays,method='MBD',main="Sensor 7 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#47 is a holiday and was not identified
+matplot(S7Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 7 All Thursdays")
+fbplot(S7Thursdays,method='MBD',main="Sensor 7 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#47 is a holiday and was not identified
+matplot(S7Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 7 All Fridays")
+fbplot(S7Fridays,method='MBD',main="Sensor 7 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#6 is a holiday and matches with fbplot
+matplot(S7Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 7 All Sundays")
+fbplot(S7Sundays,method='MBD',main="Sensor 7 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,400))
+
+#################################################
+
+#For sensor 8
+S8Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S8Mondays = rbind(S8Mondays,sens8[index])
+}
+S8Mondays = S8Mondays[2:289,]
+
+
+S8Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S8Tuesdays = rbind(S8Tuesdays,sens8[index])
+}
+S8Tuesdays = S8Tuesdays[2:289,]
+
+S8Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S8Thursdays = rbind(S8Thursdays,sens8[index])
+}
+S8Thursdays = S8Thursdays[2:289,]
+
+S8Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S8Fridays = rbind(S8Fridays,sens8[index])
+}
+S8Fridays = S8Fridays[2:289,]
+
+
+
+S8Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S8Sundays = rbind(S8Sundays,sens8[index])
+}
+S8Sundays = S8Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 1, 6, 22, 36, 52 correctly identified
+matplot(S8Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 8 All Mondays")
+fbplot(S8Mondays,method='MBD',main="Sensor 8 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,800))
+
+#27 is a holiday and matches with fbplot
+matplot(S8Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 8 All Tuesdays")
+fbplot(S8Tuesdays,method='MBD',main="Sensor 8 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,800))
+
+#47 is a holiday and was not identified
+matplot(S8Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 8 All Thursdays")
+fbplot(S8Thursdays,method='MBD',main="Sensor 8 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,800))
+
+#47 is a holiday and matches with fbplot
+matplot(S8Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 8 All Fridays")
+fbplot(S8Fridays,method='MBD',main="Sensor 8 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,800))
+
+#6 is a holiday and was not identified
+matplot(S8Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 8 All Sundays")
+fbplot(S8Sundays,method='MBD',main="Sensor 8 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,800))
+
+#################################################
+
+#For sensor 9
+S9Mondays = rep(NA,52)
+for(i in seq(288)) {
+  index = Mondays[seq(i,length(Mondays),288)]
+  S9Mondays = rbind(S9Mondays,sens9[index])
+}
+S9Mondays = S9Mondays[2:289,]
+
+
+S9Tuesdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Tuesdays[seq(i,length(Tuesdays),288)]
+  S9Tuesdays = rbind(S9Tuesdays,sens9[index])
+}
+S9Tuesdays = S9Tuesdays[2:289,]
+
+S9Thursdays = rep(NA,52)
+for(i in seq(288)) {
+  index = Thursdays[seq(i,length(Thursdays),288)]
+  S9Thursdays = rbind(S9Thursdays,sens9[index])
+}
+S9Thursdays = S9Thursdays[2:289,]
+
+S9Fridays = rep(NA,52)
+for(i in seq(288)) {
+  index = Fridays[seq(i,length(Fridays),288)]
+  S9Fridays = rbind(S9Fridays,sens9[index])
+}
+S9Fridays = S9Fridays[2:289,]
+
+
+S9Sundays = rep(NA,52)
+for(i in seq(288)) {
+  index = SundaysNoSavings[seq(i,length(SundaysNoSavings),288)]
+  S9Sundays = rbind(S9Sundays,sens9[index])
+}
+S9Sundays = S9Sundays[2:289,]
+
+#plots of all days and their boxplots to find outliers
+#there are 52 of each weekday in the year
+#Running fbplot will return give the curves that are outliers which we match to see if holidays are there
+
+#1,3,6,22,36,52 are holidays and only 1, 3, 22, 36, 52 correctly identified
+matplot(S9Mondays,type='l',xlab="Time",ylab="Traffic",main="Sensor 9 All Mondays")
+fbplot(S9Mondays,method='MBD',main="Sensor 9 Mondays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#27 is a holiday and matches with fbplot
+matplot(S9Tuesdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 9 All Tuesdays")
+fbplot(S9Tuesdays,method='MBD',main="Sensor 9 Tuesdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#47 is a holiday and matches with fbplot
+matplot(S9Thursdays,type='l',xlab="Time",ylab="Traffic",main="Sensor 9 All Thursdays")
+fbplot(S9Thursdays,method='MBD',main="Sensor 9 Thursdays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#47 is a holiday and matches with fbplot
+matplot(S9Fridays,type='l',xlab="Time",ylab="Traffic",main="Sensor 9 All Fridays")
+fbplot(S9Fridays,method='MBD',main="Sensor 9 Fridays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#6 is a holiday and matches with fbplot
+matplot(S9Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 9 All Sundays")
+fbplot(S9Sundays,method='MBD',main="Sensor 9 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+#################################################
+
 #For sensor 10
 S10Mondays = rep(NA,52)
 for(i in seq(288)) {
@@ -718,7 +1299,6 @@ for(i in seq(288)) {
   S10Fridays = rbind(S10Fridays,sens10[index])
 }
 S10Fridays = S10Fridays[2:289,]
-
 
 
 S10Sundays = rep(NA,52)
@@ -751,3 +1331,30 @@ fbplot(S10Fridays,method='MBD',main="Sensor 10 Fridays Functional Boxplot",xlab=
 #6 is a holiday and matches with fbplot
 matplot(S10Sundays,type='l',xlab="Time",ylab="Traffic",main="Sensor 10 All Sundays")
 fbplot(S10Sundays,method='MBD',main="Sensor 10 Sundays Functional Boxplot",xlab="Time",ylab="Traffic",ylim=c(0,600))
+
+
+##Things to consider
+#Mondays for each sensor and often had the most outlier points that were detected and often had not identified all the holidays
+
+#Sensor 6 and 7 had a lot of identified outpoints for each day
+
+#Sensor 10 had correctly identified every single holiday
+
+#fbplot was pretty accurate with sensor 9 and 10
+
+#Visually speaking there are some outliers that we visually see on the graphs that fbplot seemed to not detect
+
+#The largest distance between two sensors is within 2.3 miles
+
+#Sensors are north east of Sacramento
+
+#Holidays and their times not identified:
+  #     Mondays      Missed          Tuesdays       Missed      Thursdays     Missed      Fridays     Missed      Sundays     Missed
+  # ---------------------------------------------------------------------------------------------------------------------------------------
+  #   New Years      3           Independence        1       Thanksgiving      4      Black Friday     5         Superbowl       5
+  #   MLK            6
+  #   Presidents     6
+  #   Memorial       3
+  #   Labor          2
+  #   Christmas      3
+
