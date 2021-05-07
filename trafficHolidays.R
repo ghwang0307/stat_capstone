@@ -1342,19 +1342,38 @@ fbplot(S10Sundays,method='MBD',main="Sensor 10 Sundays Functional Boxplot",xlab=
 
 #fbplot was pretty accurate with sensor 9 and 10
 
+#fbplot wasnt able to detect a lot in sensors 1 and 4
+
+#Independence Day was the most identified holiday
+
+#MLK and Presidents day were not identified
+
 #Visually speaking there are some outliers that we visually see on the graphs that fbplot seemed to not detect
 
 #The largest distance between two sensors is within 2.3 miles
 
 #Sensors are north east of Sacramento
 
-#Holidays and their times not identified:
+#Holidays and number of times not identified:
   #     Mondays      Missed          Tuesdays       Missed      Thursdays     Missed      Fridays     Missed      Sundays     Missed
   # ---------------------------------------------------------------------------------------------------------------------------------------
   #   New Years      3           Independence        1       Thanksgiving      4      Black Friday     5         Superbowl       5
   #   MLK            6
   #   Presidents     6
-  #   Memorial       3
+  #   Memorial       4
   #   Labor          2
   #   Christmas      3
 
+#Sensors and number of missed points
+  #     Sensor       # of Missed Detections
+  #------------------------------------------------
+  #       1                 8
+  #       2                 2
+  #       3                 4
+  #       4                 9
+  #       5                 3
+  #       6                 2
+  #       7                 5
+  #       8                 3
+  #       9                 1
+  #       10                0
