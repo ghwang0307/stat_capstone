@@ -245,6 +245,11 @@ S1H8vsAvg
 S1H9vsAvg
 S1H10vsAvg
 
+sensor1totalgraphs = ggarrange(S1H1vsAvg+ rremove("x.text"),S1H2vsAvg+ rremove("x.text"),S1H3vsAvg+ rremove("x.text"),S1H4vsAvg+ rremove("x.text"),S1H5vsAvg+ rremove("x.text"),
+                               S1H6vsAvg+ rremove("x.text"),S1H7vsAvg+ rremove("x.text"),S1H8vsAvg+ rremove("x.text"),S1H9vsAvg+ rremove("x.text"),S1H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor1totalgraphs, top = "Sensor 1 Holiday Graphs")
+
 #for Sensor 2
 S2MondayAvgs = rep(NA,288)
 for(i in seq(length(S2MondayAvgs))) {
@@ -321,6 +326,11 @@ S2H7vsAvg
 S2H8vsAvg
 S2H9vsAvg
 S2H10vsAvg
+
+sensor2totalgraphs = ggarrange(S2H1vsAvg+ rremove("x.text"),S2H2vsAvg+ rremove("x.text"),S2H3vsAvg+ rremove("x.text"),S2H4vsAvg+ rremove("x.text"),S2H5vsAvg+ rremove("x.text"),
+                               S2H6vsAvg+ rremove("x.text"),S2H7vsAvg+ rremove("x.text"),S2H8vsAvg+ rremove("x.text"),S2H9vsAvg+ rremove("x.text"),S2H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor2totalgraphs, top = "Sensor 2 Holiday Graphs")
 
 #for Sensor 3
 S3MondayAvgs = rep(NA,288)
@@ -399,6 +409,11 @@ S3H8vsAvg
 S3H9vsAvg
 S3H10vsAvg
 
+sensor3totalgraphs = ggarrange(S3H1vsAvg+ rremove("x.text"),S3H2vsAvg+ rremove("x.text"),S3H3vsAvg+ rremove("x.text"),S3H4vsAvg+ rremove("x.text"),S3H5vsAvg+ rremove("x.text"),
+                               S3H6vsAvg+ rremove("x.text"),S3H7vsAvg+ rremove("x.text"),S3H8vsAvg+ rremove("x.text"),S3H9vsAvg+ rremove("x.text"),S3H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor3totalgraphs, top = "Sensor 3 Holiday Graphs")
+
 #for Sensor 4
 S4MondayAvgs = rep(NA,288)
 for(i in seq(length(S4MondayAvgs))) {
@@ -475,6 +490,11 @@ S4H7vsAvg
 S4H8vsAvg
 S4H9vsAvg
 S4H10vsAvg
+
+sensor4totalgraphs = ggarrange(S4H1vsAvg+ rremove("x.text"),S4H2vsAvg+ rremove("x.text"),S4H3vsAvg+ rremove("x.text"),S4H4vsAvg+ rremove("x.text"),S4H5vsAvg+ rremove("x.text"),
+                               S4H6vsAvg+ rremove("x.text"),S4H7vsAvg+ rremove("x.text"),S4H8vsAvg+ rremove("x.text"),S4H9vsAvg+ rremove("x.text"),S4H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor4totalgraphs, top = "Sensor 4 Holiday Graphs")
 
 #for Sensor 5
 S5MondayAvgs = rep(NA,288)
@@ -553,6 +573,11 @@ S5H8vsAvg
 S5H9vsAvg
 S5H10vsAvg
 
+sensor5totalgraphs = ggarrange(S5H1vsAvg+ rremove("x.text"),S5H2vsAvg+ rremove("x.text"),S5H3vsAvg+ rremove("x.text"),S5H4vsAvg+ rremove("x.text"),S5H5vsAvg+ rremove("x.text"),
+                               S5H6vsAvg+ rremove("x.text"),S5H7vsAvg+ rremove("x.text"),S5H8vsAvg+ rremove("x.text"),S5H9vsAvg+ rremove("x.text"),S5H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor5totalgraphs, top = "Sensor 5 Holiday Graphs")
+
 #for Sensor 6
 S6MondayAvgs = rep(NA,288)
 for(i in seq(length(S6MondayAvgs))) {
@@ -629,6 +654,11 @@ S6H7vsAvg
 S6H8vsAvg
 S6H9vsAvg
 S6H10vsAvg
+
+sensor6totalgraphs = ggarrange(S6H1vsAvg+ rremove("x.text"),S6H2vsAvg+ rremove("x.text"),S6H3vsAvg+ rremove("x.text"),S6H4vsAvg+ rremove("x.text"),S6H5vsAvg+ rremove("x.text"),
+                               S6H6vsAvg+ rremove("x.text"),S6H7vsAvg+ rremove("x.text"),S6H8vsAvg+ rremove("x.text"),S6H9vsAvg+ rremove("x.text"),S6H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor6totalgraphs, top = "Sensor 6 Holiday Graphs")
 
 ##For Sensor 7
 S7MondayAvgs = rep(NA,288)
@@ -707,6 +737,11 @@ S7H8vsAvg
 S7H9vsAvg
 S7H10vsAvg
 
+sensor7totalgraphs = ggarrange(S7H1vsAvg+ rremove("x.text"),S7H2vsAvg+ rremove("x.text"),S7H3vsAvg+ rremove("x.text"),S7H4vsAvg+ rremove("x.text"),S7H5vsAvg+ rremove("x.text"),
+                               S7H6vsAvg+ rremove("x.text"),S7H7vsAvg+ rremove("x.text"),S7H8vsAvg+ rremove("x.text"),S7H9vsAvg+ rremove("x.text"),S7H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor7totalgraphs, top = "Sensor 7 Holiday Graphs")
+
 #for Sensor 8
 S8MondayAvgs = rep(NA,288)
 for(i in seq(length(S8MondayAvgs))) {
@@ -783,6 +818,11 @@ S8H7vsAvg
 S8H8vsAvg
 S8H9vsAvg
 S8H10vsAvg
+
+sensor8totalgraphs = ggarrange(S8H1vsAvg+ rremove("x.text"),S8H2vsAvg+ rremove("x.text"),S8H3vsAvg+ rremove("x.text"),S8H4vsAvg+ rremove("x.text"),S8H5vsAvg+ rremove("x.text"),
+                               S8H6vsAvg+ rremove("x.text"),S8H7vsAvg+ rremove("x.text"),S8H8vsAvg+ rremove("x.text"),S8H9vsAvg+ rremove("x.text"),S8H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor8totalgraphs, top = "Sensor 8 Holiday Graphs")
 
 #for Sensor 9
 S9MondayAvgs = rep(NA,288)
@@ -866,6 +906,11 @@ S9H8vsAvg
 S9H9vsAvg
 S9H10vsAvg
 
+sensor9totalgraphs = ggarrange(S9H1vsAvg+ rremove("x.text"),S9H2vsAvg+ rremove("x.text"),S9H3vsAvg+ rremove("x.text"),S9H4vsAvg+ rremove("x.text"),S9H5vsAvg+ rremove("x.text"),
+                               S9H6vsAvg+ rremove("x.text"),S9H7vsAvg+ rremove("x.text"),S9H8vsAvg+ rremove("x.text"),S9H9vsAvg+ rremove("x.text"),S9H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                               ncol = 5, nrow = 2)
+annotate_figure(sensor9totalgraphs, top = "Sensor 9 Holiday Graphs")
+
 #For Sensor 10
 S10MondayAvgs = rep(NA,288)
 for(i in seq(length(S10MondayAvgs))) {
@@ -948,3 +993,8 @@ S10H7vsAvg
 S10H8vsAvg
 S10H9vsAvg
 S10H10vsAvg
+
+sensor10totalgraphs = ggarrange(S10H1vsAvg+ rremove("x.text"),S10H2vsAvg+ rremove("x.text"),S10H3vsAvg+ rremove("x.text"),S10H4vsAvg+ rremove("x.text"),S10H5vsAvg+ rremove("x.text"),
+                                S10H6vsAvg+ rremove("x.text"),S10H7vsAvg+ rremove("x.text"),S10H8vsAvg+ rremove("x.text"),S10H9vsAvg+ rremove("x.text"),S10H10vsAvg+ rremove("x.text"), common.legend = TRUE,
+                                ncol = 5, nrow = 2)
+annotate_figure(sensor10totalgraphs, top = "Sensor 10 Holiday Graphs")
